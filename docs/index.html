@@ -31,7 +31,7 @@ as a form of navigation throughout the guide.-->
           <li class = "section u-margin-bottom-tiny"><a href = "#bareLists">Bare Lists</a></li>
 
           <li class = "title"><a href = "#utilities">Utilities</a></li>
-          <li class = "section"><a href = "#colours">Colours</a></li>
+          <li class = "section"><a href = "#colors">Colors</a></li>
           <li class = "section"><a href = "#spacing">Spacing</a></li>
           <li class = "section u-margin-bottom-tiny"><a href = "#widths">Widths</a></li>
 
@@ -63,7 +63,8 @@ as a form of navigation throughout the guide.-->
             <p>Welcome to the Nightingale Front-End Framework design documentation. Nightingale consists of a suite of
               design tools and helpers, all tailored to the specific brand image of the NHS. Use to information here to build
             consistent and brand-friendly pages.</p>
-            <p>Firstly, clone the framework repository from <code> https://github.com/NHSLeadership/nightingale </code>
+            <p>Firstly, clone the framework repository from</p>
+            <xmp> https://github.com/NHSLeadership/nightingale </xmp>
             <p>Before jumping into the Nightingale project, you must ensure that you compile the latest
               version of our CSS file, compiled straight from SASS. Compiling the <code> main.scss </code> file is easy!</p>
             <ol>
@@ -351,17 +352,149 @@ as a form of navigation throughout the guide.-->
           <a class = "anchor" name = "utilities"></a>
         <h3 class = "u-color-nhs-blue">Utilities</h2>
 
-          <a class = "anchor" name = "colours"></a>
-        <h4 class = "u-margin-left-small">Colours</h3>
+          <a class = "anchor" name = "colors"></a>
+        <h4 class = "u-margin-left-small">Colors</h3>
           <div class = "u-margin-left-small">
-            <table>
-              
+
+            <p>Color is essential to support the NHS brand. It is paramount that only the NHS brand pallete is
+            used, and that the colors are used in their required quantities.</p>
+
+            <p>Access the color utility using the <code>.u-color-[ColorID]</code> for text and <code>.u-color-bg-[ColorID]</code>
+            for backgrounds.</p>
+
+            <div class = "border">
+              <p>Use plenty of these:</p>
+              <table class = "colorGrid">
+                <tr>
+                  <td class = "u-color-bg-nhs-blue"></td>
+                  <td class = "u-color-nhs-blue">Aa</td>
+                  <td><code>nhs-blue</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-white"></td>
+                  <td class = "u-color-white">Aa</td>
+                  <td><code>white</code></td>
+                </tr>
+              </table>
+            </div>
+
+            <div class = "border">
+              <p>Use these as moderate accents:</p>
+              <table class = "colorGrid">
+                <tr>
+                  <td class = "u-color-bg-nhs-black"></td>
+                  <td class = "u-color-nhs-black">Aa</td>
+                  <td><code>nhs-black</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-grey-dark"></td>
+                  <td class = "u-color-nhs-grey-dark">Aa</td>
+                  <td><code>nhs-grey-dark</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-grey-mid"></td>
+                  <td class = "u-color-nhs-grey-mid">Aa</td>
+                  <td><code>nhs-grey-mid</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-grey-pale"></td>
+                  <td class = "u-color-nhs-grey-pale">Aa</td>
+                  <td><code>nhs-grey-pale</code></td>
+                </tr>
+              </table>
+            </div>
+
+            <div class = "border">
+              <p>Use these as infrequent highlights:</p>
+              <table class = "colorGrid">
+                <tr>
+                  <td class = "u-color-bg-nhs-aqua"></td>
+                  <td class = "u-color-nhs-aqua">Aa</td>
+                  <td><code>nhs-aqua</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-pink"></td>
+                  <td class = "u-color-nhs-pink">Aa</td>
+                  <td><code>nhs-pink</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-purple"></td>
+                  <td class = "u-color-nhs-purple">Aa</td>
+                  <td><code>nhs-purple</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-purple-light"></td>
+                  <td class = "u-color-nhs-purple-light">Aa</td>
+                  <td><code>nhs-purple-light</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-nhs-orange"></td>
+                  <td class = "u-color-nhs-orange">Aa</td>
+                  <td><code>nhs-orange</code></td>
+                </tr>
             </table>
           </div>
+
+            <div class = "border">
+              <p>Use these to identify actions on screen:</p>
+              <table class = "colorGrid">
+                <tr>
+                  <td class = "u-color-bg-information"></td>
+                  <td class = "u-color-information">Aa</td>
+                  <td><code>information</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-attention"></td>
+                  <td class = "u-color-attention">Aa</td>
+                  <td><code>attention</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-pending"></td>
+                  <td class = "u-color-pending">Aa</td>
+                  <td><code>pending</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-warning"></td>
+                  <td class = "u-color-warning">Aa</td>
+                  <td><code>warning</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-error"></td>
+                  <td class = "u-color-error">Aa</td>
+                  <td><code>error</code></td>
+                </tr>
+                <tr>
+                  <td class = "u-color-bg-success"></td>
+                  <td class = "u-color-success">Aa</td>
+                  <td><code>success</code></td>
+                </tr>
+            </table>
+          </div>
+        </div>
 
 
           <a class = "anchor" name = "spacing"></a>
         <h4 class = "u-margin-left-small">Spacing</h3>
+          <div class="u-margin-left-small">
+            <p>Spacing is used to nudge HTML around the page. It can be used to customise the positioning and
+            spacing of any element. In its basic form, general spacing can be applied with two classes:</p>
+
+            <p><strong>Margin:</strong></p>
+            <xmp>.u-margin</xmp>
+            <p><strong>Padding:</strong></p>
+            <xmp>.u-padding</xmp>
+
+            <p>The utility class can then be appended to give closer control over where spacing is applied:</p>
+            <xmp>.u-[margin|padding]-[left|right|top|bottom]</xmp>
+
+            <p>Furthermore, the spacing can be changed in magnitude:</p>
+            <xmp>.u-[margin|padding]-[left|right|top|bottom]-[none|tiny|small|large]</xmp>
+
+            <p>For example, an element with class <code>.u-margin-large</code> would have large margin in
+              every direction. Alternatively, an element with class <code>.u-padding-top</code> would have normal
+              padding in the top direction.</p>
+
+          </div>
 
           <a class = "anchor" name = "widths"></a>
         <h4 class = "u-margin-left-small">Widths</h3>
@@ -591,69 +724,6 @@ as a form of navigation throughout the guide.-->
 
       <hr class = "c-divider"/>
 
-
-
-      <div class = "o-layout__item">
-
-          <h3 class = "u-margin-none">Colors</h3>
-          <p>All of the NHS colours can be initally referenced through the <abbr class = "codeSnip"> .u-color-bg-</abbr> xmpfix. Then, append the appropriate identifier:</p>
-
-          <table class = "colourGrid">
-            <tr>
-              <td class = "u-color-bg-nhs-blue"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-blue</p></td>
-              <td class = "u-color-bg-attention"></td>
-              <td><p class = "codeSnip u-margin-small">attention</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-white"></td>
-              <td><p class = "codeSnip u-margin-small">white</p></td>
-              <td class = "u-color-bg-error"></td>
-              <td><p class = "codeSnip u-margin-small">error</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-aqua"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-aqua</p></td>
-              <td class = "u-color-bg-information"></td>
-              <td><p class = "codeSnip u-margin-small">information</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-black"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-black</p></td>
-              <td class = "u-color-bg-pending"></td>
-              <td><p class = "codeSnip u-margin-small">pending</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-grey-dark"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-grey-dark</p></td>
-              <td class = "u-color-bg-success"></td>
-              <td><p class = "codeSnip u-margin-small">success</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-grey-mid"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-grey-mid</p></td>
-              <td class = "u-color-bg-warning"></td>
-              <td><p class = "codeSnip u-margin-small">warning</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-grey-pale"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-grey-pale</p></td>
-              <td class = "u-color-bg-nhs-orange"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-orange</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-pink"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-pink</p></td>
-              <td class = "u-color-bg-nhs-purple"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-purple</p></td>
-            </tr>
-            <tr>
-              <td class = "u-color-bg-nhs-purple-light"></td>
-              <td><p class = "codeSnip u-margin-small">nhs-purple-light</p></td>
-            </tr>
-          </table>
-
-          <hr class="c-divider" />
 
           <h3>Spacing</h3>
           <p>Spacing is formed using the following syntax:</p>

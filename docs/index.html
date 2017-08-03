@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NHS Design Docs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./main.css" />
+<link rel="stylesheet" href="./add.css" />
+<link rel="icon" href = "./assets/img/favicon.png"/>
+</head>
+<body>
+
+<!-- Floating navigation and header. They are affixed. The floatedNav element will
+disappear on mobile. The floatingNav contains many <a> tags, using local links
+as a form of navigation throughout the guide.-->
+  <div style = "width:100%;" class = "sticky c-page-header">
+    <div class = "o-wrapper">
+      <img class = "c-page-header__logo" src="./assets/img/logoMain.png" alt="" width="74" height="30"/>
+      <h3 class = "c-page-header__title u-margin-bottom-none">Nightingale Docs</h3>
+    </div>
+  </div>
+
+  <div class = "sticky sideNav">
+        <ul>
+          <li class = "title u-margin-top-small"><a href = "#introduction">Introduction</a></li>
+          <li class = "section"><a href = "#gettingStarted">Getting Started</a></li>
+          <li class = "section u-margin-bottom-tiny"><a href = "#designPrincipals">Design Principals</a></li>
+
+          <li class = "title"><a href = "#objects">Objects</a></li>
+          <li class = "section"><a href = "#wrappers">Wrappers</a></li>
+          <li class = "section"><a href = "#layout">Layout</a></li>
+          <li class = "section u-margin-bottom-tiny"><a href = "#bareLists">Bare Lists</a></li>
+
+          <li class = "title"><a href = "#utilities">Utilities</a></li>
+          <li class = "section"><a href = "#colours">Colours</a></li>
+          <li class = "section"><a href = "#spacing">Spacing</a></li>
+          <li class = "section u-margin-bottom-tiny"><a href = "#widths">Widths</a></li>
+
+          <li class = "title"><a href = "#components">Components</a></li>
+          <li class = "section"><a href = "#buttons">Buttons</a></li>
+          <li class = "section"><a href = "#divider">Divider</a></li>
+          <li class = "section"><a href = "#ribbons">Ribbons</a></li>
+          <li class = "section"><a href = "#pageHeader">Page Header</a></li>
+          <li class = "section"><a href = "#navPrimary">Nav Primary</a></li>
+          <li class = "section"><a href = "#pageFooter">Page Footer</a></li>
+          <li class = "section"><a href = "#progressBar">Progress Bar</a></li>
+          <li class = "section"><a href = "#progressWheel">Progress Wheel</a></li>
+          <li class = "section"><a href = "#forms">Forms</a></li>
+          <li class = "section u-margin-bottom-tiny"><a href = "#pagination">Pagination</a></li>
+        </ul>
+  </div>
+
+  <div class="o-wrapper" id = "mainBody">
+    <div class = "o-layout">
+
+<!-- Introduction Section -->
+      <div class = "o-layout__item">
+        <a class = "anchor" name = "introduction"></a>
+        <h3 class = "u-color-nhs-blue">Introduction</h2>
+
+        <a class = "anchor" name = "gettingStarted"></a>
+        <h4 class = "u-margin-left-small">Getting Started</h3>
+          <div class = "u-margin-left-small">
+            <p>Welcome to the Nightingale Front-End Framework design documentation. Nightingale consists of a suite of
+              design tools and helpers, all tailored to the specific brand image of the NHS. Use to information here to build
+            consistent and brand-friendly pages.</p>
+            <p>Firstly, clone the framework repository from <code> https://github.com/NHSLeadership/nightingale </code>
+            <p>Before jumping into the Nightingale project, you must ensure that you compile the latest
+              version of our CSS file, compiled straight from SASS. Compiling the <code> main.scss </code> file is easy!</p>
+            <ol>
+              <li><p>Open Terminal and <code> cd </code> to the Nightingale directory:</p>
+                  <xmp>$ cd /path/to/nightingale </xmp>
+              </li>
+              <li><p>Run the SASS watch command</p>
+                  <xmp>$ npm run watch</xmp>
+                  <p>You might need to trick your machine into rebuilding the CSS for you.
+                    To do this, open <code> main.scss </code> and make any change at all, then save the file.</p>
+              </li>
+              <li><p>That's all! You can now locate a compiled CSS file within the Nightingale directory.</p></li>
+            </ol>
+          </div>
+
+          <a class = "anchor" name = "designPrincipals"></a>
+          <h4 class = "u-margin-left-small">Design Principals</h3>
+            <div class = "u-margin-left-small">
+              <p>Nightingale is based on a repsonsive grid-like layout system. It is built upon the CSS framework on 'tachyons', a simple
+                technique in which any style can be built from a set of predefined classes containing predefined styling.</p>
+              <p>Using the 'tachyon technique' is simple. Just combine classes to give a desired final style. </p>
+              <p>Using this documentation, you must ensure that all brand guidelines are met. This ensures a unified image throughout
+                the NHS, a vital aspect of improving the reliability and stability of the NHS brand.</p>
+            </div>
+      </div>
+
+      <hr class = "c-divider"/>
+
+<!-- Objects Section -->
+      <div class = "o-layout__item">
+
+          <a class = "anchor" name = "objects"></a>
+        <h3 class = "u-color-nhs-blue">Objects</h2>
+
+          <a class = "anchor" name = "wrappers"></a>
+        <h4 class = "u-margin-left-small">Wrappers</h3>
+          <div class = "u-margin-left-small">
+            <p>Before beginning a layout, a wrapper division should be created to ensure
+              proper edge margins and padding. Use the <code>.o-wrapper</code> class:</p>
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class = "o-wrapper">
+  //Layout Here
+</div></xmp>
+<!-- End indentation section -->
+
+          </div>
+
+          <a class = "anchor" name = "layout"></a>
+        <h4 class = "u-margin-left-small">Layout</h3>
+          <div class = "u-margin-left-small">
+
+            <p>The basis for any Nightingale page fundamentally begins with its layout.</p>
+            <p>The layout object (<code>.o-layout</code>) provides us with a column-style layout system.
+            Items within the layout object are layout items (<code>.o-layout__item</code>). Introducing width utility
+            classes changes the behavior of the items (e.g. <code>u-1/2</code>).</p>
+
+            <p>An exemplar layout scenario:</p>
+
+            <div class = "border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@xl">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class = "o-layout">
+  <div class = "o-layout__item  u-1/1">
+  </div>
+  <div class = "o-layout__item  u-1/1">
+  </div>
+</div></xmp>
+<!-- End indentation section -->
+
+                </div>
+                <div class = "o-layout__item u-6/12@xl">
+                  <p>Result:</p>
+                  <div class = "o-layout">
+                    <div class = "o-layout__item u-1/1">
+                      <p class = "border">A1</p>
+                    </div>
+                    <div class = "o-layout__item u-1/1">
+                      <p class = "border">A2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>The above will create a two-area structure in which each area will
+            fluidly fill the full width of the parent. For more
+          information on widths, and how to use them, please visit the <a href = "#widths">Widths</a> section.</p>
+
+            <p>We can also manipulate entire layout systems by adding a series of Modifiers
+            to the <code>.o-layout</code> block. </p>
+            <strong>Fill Order - Reverse:</strong>
+
+           <div class = "border o-wrapper">
+              <div class = "o-layout  o-layout--narrow">
+                <div class = "o-layout__item u-6/12@xl">
+                  <xmp><div class="o-layout  o-layout--reverse"></xmp>
+                </div>
+
+                <div class = "o-layout__item u-6/12@xl">
+                  <p>Result:</p>
+                  <div class = "o-layout o-layout--reverse">
+                    <div class = "o-layout__item u-6/12">
+                      <p class = "border">A1</p>
+                    </div>
+                    <div class = "o-layout__item u-6/12">
+                      <p class = "border">A2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>This will reverse the displayed order of the system so that it runs in the
+            opposite order to our source, effectively flipping the system over.</p>
+            <strong>Fill Order - Center/Right:</strong>
+
+            <div class = "border o-wrapper">
+               <div class = "o-layout">
+                 <div class = "o-layout__item u-1/1@xl">
+                   <xmp><div class="o-layout o-layout--[right|center]"></xmp>
+                 </div>
+
+                 <div class = "o-layout__item u-6/12@xl">
+                   <p>Center:</p>
+                   <div class = "o-layout o-layout--center">
+                     <div class = "o-layout__item u-2/12">
+                       <p class = "border">A1</p>
+                     </div>
+                     <div class = "o-layout__item u-2/12">
+                       <p class = "border">A2</p>
+                     </div>
+                   </div>
+                 </div>
+
+                 <div class = "o-layout__item u-6/12@xl">
+                   <p>Right:</p>
+                   <div class = "o-layout o-layout--right">
+                     <div class = "o-layout__item u-2/12">
+                       <p class = "border">A1</p>
+                     </div>
+                     <div class = "o-layout__item u-2/12">
+                       <p class = "border">A2</p>
+                     </div>
+                   </div>
+                 </div>
+
+               </div>
+             </div>
+
+            <p>This will cause the system to fill up from either the centre or the right
+            hand side. Default behaviour is to fill up the layout system from the left.</p>
+            <strong>Alignment:</strong>
+
+            <div class = "border o-wrapper">
+               <div class = "o-layout o-layout--narrow">
+                 <div class = "o-layout__item u-1/1@xl">
+                   <xmp><div class="o-layout  o-layout--[middle|bottom]"></xmp>
+                 </div>
+
+                 <div class = "o-layout__item u-4/12@xl">
+                   <p>None:</p>
+                   <div class = "o-layout">
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                     </div>
+                   </div>
+                 </div>
+
+                 <div class = "o-layout__item u-4/12@xl">
+                   <p>Middle:</p>
+                   <div class = "o-layout o-layout--middle">
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                     </div>
+                   </div>
+                 </div>
+
+                 <div class = "o-layout__item u-4/12@xl">
+                   <p>Bottom:</p>
+                   <div class = "o-layout o-layout--bottom">
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                       <p class = "border"></p>
+                     </div>
+                     <div class = "o-layout__item u-3/12">
+                       <p class = "border"></p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             <p>This will change the fill distribution of items within the system, so that they may
+              align vertically Default behaviour is to fill up the layout system from the top.</p>
+             <strong>Guttering:</strong>
+
+             <div class = "border o-wrapper">
+                <div class = "o-layout o-layout--narrow">
+                  <div class = "o-layout__item u-1/1@xl">
+                    <xmp><div class="o-layout  o-layout--[wide|narrow|flush]"></xmp>
+                  </div>
+
+                  <div class = "o-layout__item u-4/12@xl">
+                    <p>Wide:</p>
+                    <div class = "o-layout o-layout--wide">
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A1</p>
+                      </div>
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A2</p>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class = "o-layout__item u-4/12@xl">
+                    <p>Narrow:</p>
+                    <div class = "o-layout o-layout--narrow">
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A1</p>
+                      </div>
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A2</p>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class = "o-layout__item u-4/12@xl">
+                    <p>Flush:</p>
+                    <div class = "o-layout o-layout--flush">
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A1</p>
+                      </div>
+                      <div class = "o-layout__item u-3/12">
+                        <p class = "border">A2</p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          <a class = "anchor" name = "bareLists"></a>
+        <h4 class = "u-margin-left-small">Bare Lists</h3>
+      </div>
+
+      <hr class = "c-divider"/>
+
+<!-- Utilities Section -->
+      <div class = "o-layout__item">
+          <a class = "anchor" name = "utilities"></a>
+        <h3 class = "u-color-nhs-blue">Utilities</h2>
+          <a class = "anchor" name = "colours"></a>
+        <h4 class = "u-margin-left-small">Colours</h3>
+          <a class = "anchor" name = "spacing"></a>
+        <h4 class = "u-margin-left-small">Spacing</h3>
+
+          <a class = "anchor" name = "widths"></a>
+        <h4 class = "u-margin-left-small">Widths</h3>
+          <div class = "u-margin-left-small">
+            <p>The page is split into 12 columns. Each <a href = "#layout">layout item</a> can be set to
+            take up a certain number of columns, creating sections of content. To assign width, use the <code>.u-[denominator]/12</code> classes, ensuring that
+        the total denominators of every layout item add up to 12:</p>
+
+            <div class = "border o-wrapper">
+                <div class = "o-layout">
+                    <div class = "o-layout__item u-1/1">
+                        <p class = "border"><code>.u-1/1</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/2">
+                        <p class = "border"><code>.u-1/2</code></p>
+                    </div>
+                    <div class = "o-layout__item u-6/12">
+                        <p class = "border"><code>.u-6/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-6/12">
+                        <p class = "border"><code>.u-6/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-4/12">
+                        <p class = "border"><code>.u-4/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-4/12">
+                        <p class = "border"><code>.u-4/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-4/12">
+                        <p class = "border"><code>.u-4/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-3/12">
+                        <p class = "border"><code>.u-3/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-3/12">
+                        <p class = "border"><code>.u-3/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-3/12">
+                        <p class = "border"><code>.u-3/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-3/12">
+                        <p class = "border"><code>.u-3/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-2/12">
+                        <p class = "border"><code>.u-2/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                    <div class = "o-layout__item u-1/12">
+                        <p class = "border"><code>1/12</code></p>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+
+      <hr class = "c-divider"/>
+
+<!-- Components Section -->
+      <div class = "o-layout__item">
+          <a class = "anchor" name = "components"></a>
+        <h3 class = "u-color-nhs-blue">Components</h2>
+          <a class = "anchor" name = "buttons"></a>
+        <h4 class = "u-margin-left-small">Buttons</h3>
+          <a class = "anchor" name = "spinners"></a>
+        <h4 class = "u-margin-left-small">Spinners</h3>
+          <a class = "anchor" name = "divider"></a>
+        <h4 class = "u-margin-left-small">Divider</h3>
+          <a class = "anchor" name = "ribbons"></a>
+        <h4 class = "u-margin-left-small">Ribbons</h3>
+          <a class = "anchor" name = "pageHeader"></a>
+        <h4 class = "u-margin-left-small">Page Header</h3>
+          <a class = "anchor" name = "navPrimary"></a>
+        <h4 class = "u-margin-left-small">Nav Primary</h3>
+          <a class = "anchor" name = "pageFooter"></a>
+        <h4 class = "u-margin-left-small">Page Footer</h3>
+          <a class = "anchor" name = "progressBar"></a>
+        <h4 class = "u-margin-left-small">Progress Bar</h3>
+          <a class = "anchor" name = "progressWheel"></a>
+        <h4 class = "u-margin-left-small">Progress Wheel</h3>
+          <a class = "anchor" name = "forms"></a>
+        <h4 class = "u-margin-left-small">Forms</h3>
+          <a class = "anchor" name = "pagination"></a>
+        <h4 class = "u-margin-left-small">Pagination</h3>
+      </div>
+
+      <hr class = "c-divider"/>
+
+
+
+      <div class = "o-layout__item">
+
+          <h3 class = "u-margin-none">Colors</h3>
+          <p>All of the NHS colours can be initally referenced through the <abbr class = "codeSnip"> .u-color-bg-</abbr> xmpfix. Then, append the appropriate identifier:</p>
+
+          <table class = "colourGrid">
+            <tr>
+              <td class = "u-color-bg-nhs-blue"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-blue</p></td>
+              <td class = "u-color-bg-attention"></td>
+              <td><p class = "codeSnip u-margin-small">attention</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-white"></td>
+              <td><p class = "codeSnip u-margin-small">white</p></td>
+              <td class = "u-color-bg-error"></td>
+              <td><p class = "codeSnip u-margin-small">error</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-aqua"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-aqua</p></td>
+              <td class = "u-color-bg-information"></td>
+              <td><p class = "codeSnip u-margin-small">information</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-black"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-black</p></td>
+              <td class = "u-color-bg-pending"></td>
+              <td><p class = "codeSnip u-margin-small">pending</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-grey-dark"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-grey-dark</p></td>
+              <td class = "u-color-bg-success"></td>
+              <td><p class = "codeSnip u-margin-small">success</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-grey-mid"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-grey-mid</p></td>
+              <td class = "u-color-bg-warning"></td>
+              <td><p class = "codeSnip u-margin-small">warning</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-grey-pale"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-grey-pale</p></td>
+              <td class = "u-color-bg-nhs-orange"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-orange</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-pink"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-pink</p></td>
+              <td class = "u-color-bg-nhs-purple"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-purple</p></td>
+            </tr>
+            <tr>
+              <td class = "u-color-bg-nhs-purple-light"></td>
+              <td><p class = "codeSnip u-margin-small">nhs-purple-light</p></td>
+            </tr>
+          </table>
+
+          <hr class="c-divider" />
+
+          <h3>Spacing</h3>
+          <p>Spacing is formed using the following syntax:</p>
+
+          <table>
+            <tr>
+              <td class = "side"><p>Class</p></td>
+              <td class = "side"><p>Pick One</p></td>
+              <td class = "side"><p>Pick One</p></td>
+              <td class = "side"><p>Pick One</p></td>
+            </tr>
+            <tr>
+              <td class =  "side"><p class = "codeSnip">.u-</p></td>
+              <td class = "side"><p class = "codeSnip">margin-</p></td>
+              <td class = "side"><p class = "codeSnip">top-</p></td>
+              <td class = "side"><p class = "codeSnip">tiny</p></td>
+            </tr>
+            <tr>
+              <td class = "side"><p>&nbsp</p></td>
+              <td class = "side"><p class = "codeSnip">padding-</p></td>
+              <td class = "side"><p class = "codeSnip">bottom-</p></td>
+              <td class = "side"><p class = "codeSnip">small</p></td>
+            </tr>
+            <tr>
+              <td class = "side"><p>&nbsp</p></td>
+              <td class = "side"><p>&nbsp</p></td>
+              <td class = "side"><p class = "codeSnip">left-</p></td>
+              <td class = "side"><p class = "codeSnip">large</p></td>
+            </tr>
+            <tr>
+              <td class = "side"><p>&nbsp</p></td>
+              <td class = "side"><p>&nbsp</p></td>
+              <td class = "side"><p class = "codeSnip">right-</p></td>
+              <td class = "side"><p class = "codeSnip">none</p></td>
+            </tr>
+          </table>
+
+          <p>For Example, <abbr class = "codeSnip">.u-margin-top-tiny</abbr> would result in an element whose top margin is tiny.</p>
+          <p>Similarly, <abbr class = "codeSnip">.u-padding-large</abbr> would result in an element where <strong>every</strong> padding oreintation is large.</p>
+
+          <hr class="c-divider" />
+
+          <h3>Sizes</h3>
+          <p>Some text</p>
+          <p class = "codeSnip">.Some_Code</p>
+          <hr class="c-divider" />
+
+          <h3>Shadows</h3>
+          <p>Some text</p>
+          <p class = "codeSnip">.Some_Code</p>
+          <hr class="c-divider" />
+
+      </div>
+
+      <h2>Action Item Guidelines</h2>
+
+      <div class = "o-layout__item">
+
+          <h3>Buttons</h3>
+          <p>The buttons have three induvidual colour schemes. They repersent the weighting of the buttons action on the page.</p>
+          <p>The following code will produce the basic button element:</p>
+          <xmp class = "codeSnip"><a href="#0" class="c-btn ">Click me!</a></xmp>
+          <p>To add the colour scheme, append the following classes:</p>
+
+          <table>
+            <tr>
+              <td><a href="#0" class="c-btn  c-btn--submit">Click me!</a></td>
+              <td><p class = "codeSnip u-margin-small">c-btn--submit</p></td>
+            </tr>
+            <tr>
+              <td><a href="#0" class="c-btn  c-btn--primary">Click me!</a></td>
+              <td><p class = "codeSnip u-margin-small">c-btn--primary</p></td>
+            </tr>
+            <tr>
+              <td><a href="#0" class="c-btn  c-btn--secondary">Click me!</a></td>
+              <td><p class = "codeSnip u-margin-small">c-btn--secondary</p></td>
+            </tr>
+          </table>
+
+
+
+          <hr class="c-divider" />
+
+          <h3>Banners</h3>
+          <p>Some text</p>
+          <p class = "codeSnip">.Some_Code</p>
+          <hr class="c-divider" />
+
+          <h3>Inputs</h3>
+          <p>Some text</p
+            <p class = "codeSnip">.Some_Code</p>
+          <hr class="c-divider" />
+
+          <h3>Spinners</h3>
+          <p>Some text</p>
+          <p class = "codeSnip">.Some_Code</p>
+          <hr class="c-divider" />
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="c-page-footer">
+
+    <div class="o-wrapper">
+
+      <div class="o-layout">
+
+        <div class="o-layout__item  u-4/12@lg">
+
+          <h4>Some Info Below</h4>
+
+          <ul class="o-list-bare">
+            <li><a href="#0"></a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <hr class="c-divider" />
+
+      <p><small>This is a very important piece of text. You should read it and take notes...</small></p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

@@ -37,6 +37,7 @@ as a form of navigation throughout the guide.-->
 
           <li class = "title"><a href = "#components">Components</a></li>
           <li class = "section"><a href = "#buttons">Buttons</a></li>
+          <li class = "section"><a href = "#spinners">Spinners</a></li>
           <li class = "section"><a href = "#divider">Divider</a></li>
           <li class = "section"><a href = "#ribbons">Ribbons</a></li>
           <li class = "section"><a href = "#pageHeader">Page Header</a></li>
@@ -45,6 +46,9 @@ as a form of navigation throughout the guide.-->
           <li class = "section"><a href = "#progressBar">Progress Bar</a></li>
           <li class = "section"><a href = "#progressWheel">Progress Wheel</a></li>
           <li class = "section"><a href = "#forms">Forms</a></li>
+          <li class = "section"><a href = "#pagination">Pagination</a></li>
+          <li class = "section"><a href = "#details">Details</a></li>
+          <li class = "section"><a href = "#sprites">Sprites</a></li>
           <li class = "section u-margin-bottom-tiny"><a href = "#pagination">Pagination</a></li>
         </ul>
   </div>
@@ -698,135 +702,578 @@ as a form of navigation throughout the guide.-->
       <div class = "o-layout__item">
           <a class = "anchor" name = "components"></a>
         <h3 class = "u-color-nhs-blue">Components</h2>
+
           <a class = "anchor" name = "buttons"></a>
         <h4 class = "u-margin-left-small">Buttons</h3>
+          <div class = "u-margin-left-small">
+            <p>Buttons are used to invoke actions. Use the <code>.c-btn</code> class to style a <button>Button</button> element. Then, append
+            a <code>.c-btn--[submit|primary|secondary]</code> class to introduce one of three color schemes.</p>
+            <p>Here is a basic button element:</p>
+
+            <div class = "border">
+              <xmp><button class = "c-btn c-btn--[submit|primary|secondary]">Click Me!</button></xmp>
+            </div>
+
+            <p>Adding the color schemes below:</p>
+            <div class = "border">
+              <p><code>.c-btn--submit</code>:</p>
+              <button class = "c-btn c-btn--submit u-margin-tiny ">Submit</button>
+              <p><code>.c-btn--primary</code>:</p>
+              <button class = "c-btn c-btn--primary u-margin-tiny">Primary</button>
+              <p><code>.c-btn--secondary</code>:</p>
+              <button class = "c-btn c-btn--secondary u-margin-tiny">Secondary</button>
+            </div>
+
+            <p>Appending modifiers will change the behaviour. You can span the whole width of a parent:</p>
+            <div class = "border">
+              <p><code>.c-btn--full</code>:</p>
+              <button class = "c-btn c-btn--submit c-btn--full u-margin-tiny ">Submit</button>
+            </div>
+
+            <p>Or disable a button entirely:</p>
+            <div class = "border">
+              <p><code>.is-disabled</code>:</p>
+              <button class = "c-btn c-btn--submit is-disabled u-margin-tiny ">Submit</button>
+            </div>
+
+          </div>
+
           <a class = "anchor" name = "spinners"></a>
         <h4 class = "u-margin-left-small">Spinners</h3>
+          <div class = "u-margin-left-small">
+
+            <p>Spinners are used to signify a loading or waiting phase for a user. Use the <code>.c-spinner</code> class to style a
+            <strong>Strong</strong> tag, ensuring that the phrase "Loading..." is written between the tags. If a browser does not support
+            animation, the "Loading..." text will be displayed as a fallback.</p>
+            <p>Here is a basic spinner example:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+                  <xmp><strong class = "c-spinner">Loading...</strong></xmp>
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <strong class = "c-spinner">Loading...</strong>
+                </div>
+              </div>
+            </div>
+
+            <p>Appending the <code>.c-spinner--inverse</code> class will invert the color scheme:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+                  <xmp><strong class = "c-spinner c-spinner--inverse">Loading...</strong></xmp>
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <strong class = "c-spinner c-spinner--inverse">Loading...</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <a class = "anchor" name = "divider"></a>
+
         <h4 class = "u-margin-left-small">Divider</h3>
+          <div class = "u-margin-left-small">
+            <p>Dividers can be used to segement a page, improving readability. Use the <code>.c-divider</code> class within a 'hr' tag:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+                  <xmp><hr class = "c-divider"></xmp>
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <hr class = "c-divider">
+                </div>
+              </div>
+            </div>
+
+            <p>Appending the <code>.c-divider--large</code> class will increase the strength of the divide:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+                  <xmp><hr class = "c-divider c-divider--large"></xmp>
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <hr class = "c-divider c-divider--large">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
           <a class = "anchor" name = "ribbons"></a>
         <h4 class = "u-margin-left-small">Ribbons</h3>
+          <div class = "u-margin-left-small">
+            <p>Ribbons are used to draw attention to key details at the very head of any document. Place a ribbon division before any other
+            content within the main html body to ensure it appears at the head of the page. The structure of a ribbon consists of the following:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class = "c-ribbon">
+  <div class = "o-wrapper">
+    <div class = "c-ribbon__actions">
+      <button>Action</button>
+    </div>
+    <strong class = "c-ribbon__tag">[Tag Text Here]</strong>
+    <strong class = "c-ribbon__body">[Body Text Here]</strong>
+  </div>
+</div></xmp>
+<!-- End indentation section -->
+
+              </div>
+              <div class = "o-layout__item u-6/12@md">
+                <p>Result:</p>
+                <div class = "c-ribbon">
+                  <div class = "o-wrapper">
+                    <div class = "c-ribbon__actions">
+                      <button class = "c-sprite c-sprite--close-rev">Action</button>
+                    </div>
+                    <strong class = "c-ribbon__tag">[Tag]</strong>
+                    <strong class = "c-ribbon__body">[Body]</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p>The ribbon consists of three key areas: The TAG, the BODY and the ACTION.</p>
+          <strong>TAG:</strong>
+          <p><code>.c-ribbon__tag</code> (Optional) Provides detail to the overall message of the ribbon.</p>
+          <strong>BODY:</strong>
+          <p><code>.c-ribbon__body</code> (Optional) Provides the key content of the ribbon.</p>
+          <strong>ACTION:</strong>
+          <p><code>.c-ribbon__actions</code> (Optional) Provides an optional action, e.g. Close Ribbon. The button that lies within the actions
+          division must be styled as a sprite, with an attached icon. Click to learn about
+          <a href = "#sprites">sprites</a>. It is possible to omit any of the optional areas to build a ribbon that suits your purpouse.</p>
+          <p>Ribbons can also be styled to give a visual cue as to their purpose. Append the following style varients to
+          the outer ribbon division:</p>
+
+          <div  class = "border">
+            <p><code>.c-ribbon--alpha</code>:</p>
+            <div class = "c-ribbon c-ribbon--alpha">
+              <div class = "o-wrapper">
+                <strong class = "c-ribbon__tag">Alpha</strong>
+                <strong class = "c-ribbon__body">This website is almost certainly in Alpha</strong>
+              </div>
+            </div>
+          </div>
+
+          <div  class = "border">
+            <p><code>.c-ribbon--beta</code>:</p>
+            <div class = "c-ribbon c-ribbon--beta">
+              <div class = "o-wrapper">
+                <strong class = "c-ribbon__tag">Beta</strong>
+                <strong class = "c-ribbon__body">This website is almost certainly in Beta</strong>
+              </div>
+            </div>
+          </div>
+
+          <div  class = "border">
+            <p><code>.c-ribbon--live</code>:</p>
+            <div class = "c-ribbon c-ribbon--live">
+              <div class = "o-wrapper">
+                <strong class = "c-ribbon__tag">Live</strong>
+                <strong class = "c-ribbon__body">This website is almost certainly Live</strong>
+              </div>
+            </div>
+          </div>
+
+          <p>Ribbons with expandable content can be included to include further details. To implement the expandability,
+          use a details tag to hold the <code>.c-ribbon__body</code> class, with a nested summary inside. Click to learn more about <a href = "#details">details</a>.</p>
+          <p>Here is an expandable ribbon example:</p>
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class = "c-ribbon c-ribbon--expandable">
+  <div class = "o-wrapper">
+    <details class = "c-ribbon__body">
+        <summary>
+          <b>Expandable Content:</b>
+          There is some really intersting expandable content below. Maybe you should expand the content and see what happens? How exciting!
+        </summary>
+      </details>
+  </div>
+</div></xmp>
+<!-- End indentation section -->
+
+          <div  class = "border">
+            <p><code>.c-ribbon--expandable</code>:</p>
+            <div class = "c-ribbon c-ribbon--expandable">
+              <div class = "o-wrapper">
+                <details class = "c-ribbon__body">
+                    <summary>
+                      <b>Expandable Content:</b>
+                      There is some really intersting expandable content below. Maybe you should expand the content and see what happens? How exciting!
+                    </summary>
+                  </details>
+              </div>
+            </div>
+          </div>
+        </div>
+
           <a class = "anchor" name = "pageHeader"></a>
         <h4 class = "u-margin-left-small">Page Header</h3>
+          <div class = "u-margin-left-small">
+          </div>
+
           <a class = "anchor" name = "navPrimary"></a>
         <h4 class = "u-margin-left-small">Nav Primary</h3>
+          <div class = "u-margin-left-small">
+          </div>
+
           <a class = "anchor" name = "pageFooter"></a>
         <h4 class = "u-margin-left-small">Page Footer</h3>
+          <div class = "u-margin-left-small">
+          </div>
+
           <a class = "anchor" name = "progressBar"></a>
         <h4 class = "u-margin-left-small">Progress Bar</h3>
+          <div class = "u-margin-left-small">
+            <p>Progress bars are used to inform the user as to the progress of a process, or completion of an online form.
+            The structure of the progress bar is:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class = "c-progress-bar">
+  <h3 class = "c-progress-bar__title">Progress Title</h3>
+  <div class="c-progress-bar__bar">
+    <span class="c-progress-bar__fill" style="left: -50%;"></span>
+  </div>
+  <h3 class = "c-progress-bar__title-sub">Progress Subtitle</h3>
+</div></xmp>
+<!-- End indentation section -->
+                </div>
+
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <div class = "c-progress-bar">
+                    <h3 class = "c-progress-bar__title">Progress Title</h3>
+                    <div class="c-progress-bar__bar">
+                      <span class="c-progress-bar__fill" style="left: -50%;"></span>
+                    </div>
+                    <h3 class = "c-progress-bar__title-sub">Progress Subtitle</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p>The progress bar consists of four areas: The TITLE, BAR, FILL & SUBTITLE.</p>
+            <strong>TITLE:</strong>
+            <p><code>.c-progress-bar__title</code> Provides a title for the bar.</p>
+            <strong>BAR:</strong>
+            <p><code>.c-progress-bar__bar</code> Provides a division container for the fill that spans the page.</p>
+            <strong>FILL:</strong>
+            <p><code>.c-progress-bar__fill</code> Fills the division container dependant on the value of the <code>style="left: [-100%|0%]"</code>.</p>
+            <strong>SUBTITLE:</strong>
+            <p><code>.c-progress-bar__title-sub</code> Provides a smaller subtitle for the bar.</p>
+          </div>
+
           <a class = "anchor" name = "progressWheel"></a>
         <h4 class = "u-margin-left-small">Progress Wheel</h3>
+          <div class = "u-margin-left-small">
+
+            <p>A variation of the progress bar, the progress wheel provides a lighter version of progress display:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><p class = "c-progress-wheel" data-percent = "33">
+  <b class = "c-progress-wheel__text">33%</b>
+</p></xmp>
+<!-- End indentation section -->
+
+              </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <p class = "c-progress-wheel" data-percent = "33">
+                    <b class = "c-progress-wheel__text">33%</b>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <p>The progress wheel consists of two areas: The WHEEL & TEXT.</p>
+            <strong>WHEEL:</strong>
+            <p><code>.c-progress-wheel</code> Provides a visiual progress wheel change the value through the <code>data-percent = [0|100]"</code> variable.</p>
+            <strong>TEXT:</strong>
+            <p><code>.c-progress-wheel__text</code> Provides a text cue to the current progress value.</p>
+          </div>
+
           <a class = "anchor" name = "forms"></a>
         <h4 class = "u-margin-left-small">Forms</h3>
+          <div class = "u-margin-left-small">
+            <p>Forms are used to collect user input. A basic form looks like this:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><form>
+  <ul class = "c-form-list">
+    <li>
+      <label for = "title">
+        Title
+        <small>
+          Here is a small sub-headline.
+        </small>
+      </label>
+      <input type="text" class = "c-form-input" id = "name" placeholder = "John Smith">
+    </li>
+  </ul>
+</form></xmp>
+<!-- End indentation section -->
+
+              </div>
+                <div style = "text-align:left"; class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <form>
+                    <ul class = "c-form-list">
+                      <li>
+                        <label for = "name">
+                          Title
+                          <small>
+                            Here is a small sub-headline.
+                          </small>
+                        </label>
+                        <input type="text" class = "c-form-input" id = "name" placeholder = "John Smith">
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <p>There is a suite of input tools avaliable. Add each desired input as another 'li'. Use the above labeling system to add custom titles and subtitles for these
+            input types:</p>
+
+            <strong>Input Error:</strong>
+            <div class = "border">
+              <xmp><input type="email" class="c-form-input  is-error" id="email" placeholder="name@domain.com" value="will@gmail.com"></xmp>
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><details class="c-form-error">
+  <summary>Email not recognised</summary>
+    <div>
+      It looks like this email is not recognised.
+    </div>
+</details></xmp>
+<!-- End indentation section -->
+
+            <p>Result:</p>
+            <input type="email" class="c-form-input  is-error" id="email" placeholder="name@domain.com" value="will@gmail.com">
+            <details class="c-form-error">
+              <summary>Email not recognised</summary>
+                <div>
+                  It looks like this email is not recognised.
+                </div>
+            </details>
+          </div>
+
+          <strong>Dropdown:</strong>
+            <div class = "border">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div class="c-form-dropdown">
+  <select class="c-form-dropdown__select  c-form-input" id="title">
+    <option>Miss.</option>
+    <option>Mr.</option>
+    <option>Mrs.</option>
+    <option>Ms.</option>
+  </select>
+</div></xmp>
+<!-- End indentation section -->
+
+            <p>Result:</p>
+            <div class="c-form-dropdown">
+              <select class="c-form-dropdown__select  c-form-input" id="title">
+                <option>Miss.</option>
+                <option>Mr.</option>
+                <option>Mrs.</option>
+                <option>Ms.</option>
+              </select>
+            </div>
+          </div>
+
+          <strong>Website:</strong>
+            <div class = "border">
+              <xmp><input type="text" class="c-form-input" id="url" placeholder="http://"></xmp>
+              <p>Result:</p>
+              <input type="text" class="c-form-input" id="url" placeholder="http://">
+            </div>
+
+          <strong>Comments:</strong>
+            <div class = "border">
+              <xmp><textarea rows="5" cols="50" class="c-form-input" id="comments"></textarea></xmp>
+              <p>Result:</p>
+              <textarea rows="5" cols="50" class="c-form-input" id="comments"></textarea>
+            </div>
+
+          <strong>Checkboxes:</strong>
+            <div class = "border">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><label class="c-form-checkbox">
+  <input type="checkbox" class="c-form-checkbox__input">
+  <span class="c-form-checkbox__faux"></span>
+  Email
+  </label>
+
+<label class="c-form-checkbox">
+  <input type="checkbox" class="c-form-checkbox__input" checked>
+  <span class="c-form-checkbox__faux"></span>
+  Phone
+</label>
+
+<label class="c-form-checkbox">
+ <input type="checkbox" class="c-form-checkbox__input">
+ <span class="c-form-checkbox__faux"></span>
+ Post
+</label></xmp>
+<!-- End indentation section -->
+
+              <p>Result:</p>
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input">
+                <span class="c-form-checkbox__faux"></span>
+                Email
+              </label>
+
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input" checked>
+                <span class="c-form-checkbox__faux"></span>
+                Phone
+              </label>
+
+              <label class="c-form-checkbox">
+                <input type="checkbox" class="c-form-checkbox__input">
+                <span class="c-form-checkbox__faux"></span>
+                Post
+              </label>
+            </div>
+
+            <strong>Radio Checkboxes:</strong>
+              <div class = "border">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><label class="c-form-checkbox  c-form-checkbox--radio">
+  <input type="radio" class="c-form-checkbox__input" name="options">
+  <span class="c-form-checkbox__faux"></span>
+  Email
+</label>
+
+<label class="c-form-checkbox  c-form-checkbox--radio">
+  <input type="radio" class="c-form-checkbox__input" name="options">
+ <span class="c-form-checkbox__faux"></span>
+  Phone
+</label>
+
+<label class="c-form-checkbox  c-form-checkbox--radio">
+  <input type="radio" class="c-form-checkbox__input" name="options">
+  <span class="c-form-checkbox__faux"></span>
+  Post
+</label></xmp>
+            <!-- End indentation section -->
+
+                <p>Result:</p>
+                <label class="c-form-checkbox  c-form-checkbox--radio">
+                  <input type="radio" class="c-form-checkbox__input" name="options">
+                  <span class="c-form-checkbox__faux"></span>
+                  Email
+                </label>
+
+                <label class="c-form-checkbox  c-form-checkbox--radio">
+                  <input type="radio" class="c-form-checkbox__input" name="options" checked>
+                  <span class="c-form-checkbox__faux"></span>
+                  Phone
+                </label>
+
+                <label class="c-form-checkbox  c-form-checkbox--radio">
+                  <input type="radio" class="c-form-checkbox__input" name="options">
+                  <span class="c-form-checkbox__faux"></span>
+                  Post
+                </label>
+              </div>
+
+
+          </div>
+
           <a class = "anchor" name = "pagination"></a>
         <h4 class = "u-margin-left-small">Pagination</h3>
+          <div class = "u-margin-left-small">
+            <p>Pagination is used to allow users to navigate around multiple pages within an enviroment. Pagination is styled from
+            an 'ol' tag, and contains list items holding a link. Here is the basic structure of the pagination styling:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><ol class="c-pagination">
+
+  <li class="c-pagination__item  c-pagination__prev">
+    <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--prev-blue">Prev Page</span></a>
+  </li>
+
+  <li class="c-pagination__item">
+    <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 1</a>
+  </li>
+
+  <li class="c-pagination__item">
+    <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 2</a>
+  </li>
+
+  <li class="c-pagination__item">
+    <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 3</a>
+  </li>
+
+  <li class="c-pagination__item  c-pagination__next">
+    <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--next-blue">Next Page</span></a>
+  </li>
+
+</ol></xmp>
+
+                </div>
+                <div style = "text-align:left"; class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <a class = "anchor" name = "details"></a>
+        <h4 class = "u-margin-left-small">Details</h3>
+          <div class = "u-margin-left-small">
+          </div>
+
+          <a class = "anchor" name = "sprites"></a>
+        <h4 class = "u-margin-left-small">Sprites</h3>
+          <div class = "u-margin-left-small">
+          </div>
+
       </div>
 
       <hr class = "c-divider"/>
 
-
-          <h3>Spacing</h3>
-          <p>Spacing is formed using the following syntax:</p>
-
-          <table>
-            <tr>
-              <td class = "side"><p>Class</p></td>
-              <td class = "side"><p>Pick One</p></td>
-              <td class = "side"><p>Pick One</p></td>
-              <td class = "side"><p>Pick One</p></td>
-            </tr>
-            <tr>
-              <td class =  "side"><p class = "codeSnip">.u-</p></td>
-              <td class = "side"><p class = "codeSnip">margin-</p></td>
-              <td class = "side"><p class = "codeSnip">top-</p></td>
-              <td class = "side"><p class = "codeSnip">tiny</p></td>
-            </tr>
-            <tr>
-              <td class = "side"><p>&nbsp</p></td>
-              <td class = "side"><p class = "codeSnip">padding-</p></td>
-              <td class = "side"><p class = "codeSnip">bottom-</p></td>
-              <td class = "side"><p class = "codeSnip">small</p></td>
-            </tr>
-            <tr>
-              <td class = "side"><p>&nbsp</p></td>
-              <td class = "side"><p>&nbsp</p></td>
-              <td class = "side"><p class = "codeSnip">left-</p></td>
-              <td class = "side"><p class = "codeSnip">large</p></td>
-            </tr>
-            <tr>
-              <td class = "side"><p>&nbsp</p></td>
-              <td class = "side"><p>&nbsp</p></td>
-              <td class = "side"><p class = "codeSnip">right-</p></td>
-              <td class = "side"><p class = "codeSnip">none</p></td>
-            </tr>
-          </table>
-
-          <p>For Example, <abbr class = "codeSnip">.u-margin-top-tiny</abbr> would result in an element whose top margin is tiny.</p>
-          <p>Similarly, <abbr class = "codeSnip">.u-padding-large</abbr> would result in an element where <strong>every</strong> padding oreintation is large.</p>
-
-          <hr class="c-divider" />
-
-          <h3>Sizes</h3>
-          <p>Some text</p>
-          <p class = "codeSnip">.Some_Code</p>
-          <hr class="c-divider" />
-
-          <h3>Shadows</h3>
-          <p>Some text</p>
-          <p class = "codeSnip">.Some_Code</p>
-          <hr class="c-divider" />
-
-      </div>
-
-      <h2>Action Item Guidelines</h2>
-
-      <div class = "o-layout__item">
-
-          <h3>Buttons</h3>
-          <p>The buttons have three induvidual colour schemes. They repersent the weighting of the buttons action on the page.</p>
-          <p>The following code will produce the basic button element:</p>
-          <xmp class = "codeSnip"><a href="#0" class="c-btn ">Click me!</a></xmp>
-          <p>To add the colour scheme, append the following classes:</p>
-
-          <table>
-            <tr>
-              <td><a href="#0" class="c-btn  c-btn--submit">Click me!</a></td>
-              <td><p class = "codeSnip u-margin-small">c-btn--submit</p></td>
-            </tr>
-            <tr>
-              <td><a href="#0" class="c-btn  c-btn--primary">Click me!</a></td>
-              <td><p class = "codeSnip u-margin-small">c-btn--primary</p></td>
-            </tr>
-            <tr>
-              <td><a href="#0" class="c-btn  c-btn--secondary">Click me!</a></td>
-              <td><p class = "codeSnip u-margin-small">c-btn--secondary</p></td>
-            </tr>
-          </table>
-
-
-
-          <hr class="c-divider" />
-
-          <h3>Banners</h3>
-          <p>Some text</p>
-          <p class = "codeSnip">.Some_Code</p>
-          <hr class="c-divider" />
-
-          <h3>Inputs</h3>
-          <p>Some text</p
-            <p class = "codeSnip">.Some_Code</p>
-          <hr class="c-divider" />
-
-          <h3>Spinners</h3>
-          <p>Some text</p>
-          <p class = "codeSnip">.Some_Code</p>
-          <hr class="c-divider" />
-
       </div>
 
     </div>
-
-  </div>
 
   <footer class="c-page-footer">
 

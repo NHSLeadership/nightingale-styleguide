@@ -1,6 +1,6 @@
 # Styleguide
 
-**NHS Leadership Academy's styleguide for implementing the [Nightingale](https://github.com/NHSLeadership/nightingale) frontend framework**
+**NHS Leadership Academy's [styleguide](http://styleguides.nhsx.uk) for implementing the [Nightingale](https://github.com/NHSLeadership/nightingale) frontend framework**
 
 ## Contents
 

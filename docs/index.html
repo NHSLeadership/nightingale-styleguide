@@ -12,12 +12,12 @@
 <!-- Floating navigation and header. They are affixed. The floatedNav element will
 disappear on mobile. The floatingNav contains many <a> tags, using local links
 as a form of navigation throughout the guide.-->
-  <div style = "width:100%;" class = "sticky c-page-header">
+  <header style = "width:100%;" class = "sticky c-page-header">
     <div class = "o-wrapper">
       <img class = "c-page-header__logo" src="./assets/img/logoMain.png" alt="" width="74" height="30"/>
       <img class = "c-page-header__title" src="./assets/img/logo-sub.png" alt="" width="241" height="25"/>
     </div>
-  </div>
+  </header>
 
   <div class = "sticky sideNav">
         <ul>
@@ -33,7 +33,9 @@ as a form of navigation throughout the guide.-->
           <li class = "title"><a href = "#utilities">Utilities</a></li>
           <li class = "section"><a href = "#colors">Colors</a></li>
           <li class = "section"><a href = "#spacing">Spacing</a></li>
-          <li class = "section u-margin-bottom-tiny"><a href = "#widths">Widths</a></li>
+          <li class = "section"><a href = "#widths">Widths</a></li>
+          <li class = "section"><a href = "#z-index">Z-index</a></li>
+          <li class = "section u-margin-bottom-tiny"><a href = "#display">Display</a></li>
 
           <li class = "title"><a href = "#components">Components</a></li>
           <li class = "section"><a href = "#buttons">Buttons</a></li>
@@ -694,18 +696,55 @@ as a form of navigation throughout the guide.-->
 
                 <p>Through careful testing, a responsive page can be built to suit any device.</p>
           </div>
+
+          <a class = "anchor" name = "z-index"></a>
+        <h4 class = "u-margin-left-small">Z-index</h4>
+          <div class="u-margin-left-small">
+            <p>Use z-indexing to stack HTML elements on-top of eachother to build layered pages.</p>
+            <p>Access indexing using the <code>.u-z-index-[0|10]</code> class, and increase the value as approproate:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><div>
+  <div style = "position:relative;" class="u-z-index-0 u-color-bg-nhs-blue">&nbsp</div>
+  <div style = "position:relative;top:-15px;left:15px;" class="u-z-index-1 u-color-bg-nhs-orange">&nbsp</div>
+  <div style = "position:relative;top:-30px;left:30px;" class="u-z-index-2 u-color-bg-nhs-purple">&nbsp</div>
+</div></xmp>
+<!-- End indentation section -->
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <div>
+                    <div style = "position:relative;" class="u-z-index-0 u-color-bg-nhs-blue">&nbsp</div>
+                    <div style = "position:relative;top:-15px;left:15px;" class="u-z-index-1 u-color-bg-nhs-orange">&nbsp</div>
+                    <div style = "position:relative;top:-30px;left:30px;" class="u-z-index-2 u-color-bg-nhs-purple">&nbsp</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p>In order to further position the layered elements, items must have at least one <code>position</code> attribute, (relative, absolute ect.), and then
+            use the <code>[top|bottom|left|right]</code> attribute to nude elements around.</p>
+          </div>
+
+          <a class = "anchor" name = "display"></a>
+        <h4 class = "u-margin-left-small">Display</h4>
+          <div class="u-margin-left-small">
+              <p>Use the <code>.u-hide-visually</code> class to hide any HTML element from view.</p>
+          </div>
       </div>
 
-      <hr class = "c-divider"/>
+      <hr class = "c-divider u-margin-top-large"/>
 
 <!-- Components Section -->
       <div class = "o-layout__item">
           <a class = "anchor" name = "components"></a>
-        <h3 class = "u-color-nhs-blue">Components</h2>
+        <h3 class = "u-color-nhs-blue">Components</h3>
 
           <a class = "anchor" name = "buttons"></a>
-        <h4 class = "u-margin-left-small">Buttons</h3>
-          <div class = "u-margin-left-small">
+        <h4 class = "u-margin-left-small">Buttons</h4>
+          <div class = "u-margin-lllt-small">
             <p>Buttons are used to invoke actions. Use the <code>.c-btn</code> class to style a <button>Button</button> element. Then, append
             a <code>.c-btn--[submit|primary|secondary]</code> class to introduce one of three color schemes.</p>
             <p>Here is a basic button element:</p>
@@ -923,6 +962,42 @@ as a form of navigation throughout the guide.-->
           <a class = "anchor" name = "pageHeader"></a>
         <h4 class = "u-margin-left-small">Page Header</h3>
           <div class = "u-margin-left-small">
+            <p>Use the header class to add a uniformly styled header to any page. This header is reponsive, and can be used in combination with
+            Nav Primary class suite.</p>
+            <p>Use the <code>.c-page-header</code> class to style a header tag and get started:</p>
+
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<xmp><header class = "c-page-header">
+  <div class = "o-wrapper">
+    <img class = "c-page-header__logo" src="./assets/img/logoMain.png" alt="" width="74" height="30"/>
+    <img class = "c-page-header__title" src="./assets/img/logo-sub.png" alt="" width="241" height="25"/>
+  </div>
+</header></xmp>
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <header class = "c-page-header">
+                    <div class = "o-wrapper">
+                      <img class = "c-page-header__logo" src="./assets/img/logoMain.png" alt="" width="74" height="30"/>
+                      <img class = "c-page-header__title" src="./assets/img/logo-sub.png" alt="" width="241" height="25"/>
+                    </div>
+                  </header>
+                </div>
+              </div>
+            </div>
+
+            <p>Inside the header tag, include a <code>.o-wrapper</code> class on a division to ensure proper spacing. Then, within this wrapper,
+            include two <code>img</code> tags with the following classes:</p>
+
+            <strong>LOGO:</strong>
+            <p><code>.c-page-header__logo</code>: Attach the NHS lozenge to this element. It will be positioned automatically.</p>
+
+            <strong>TITLE:</strong>
+            <p><code>.c-page-header__title</code>: Attach the NHS standard title for your organisation to this element. It will be positioned automatically. Alternatively, replace the
+            <code>img</code> tag with a <code>strong</code> tag, and type title text.</p>
           </div>
 
           <a class = "anchor" name = "navPrimary"></a>
@@ -933,6 +1008,86 @@ as a form of navigation throughout the guide.-->
           <a class = "anchor" name = "pageFooter"></a>
         <h4 class = "u-margin-left-small">Page Footer</h3>
           <div class = "u-margin-left-small">
+            <p>Footers are used to contain small details and infomation at the foot of the page. Use the <code>.c-page-footer</code> class
+            to get started:</p>
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<xmp><footer class="c-page-footer">
+  <div class="o-wrapper">
+    <div class="o-layout">
+      <div class="o-layout__item  u-6/12@md">
+        <h4>Footer Title</h4>
+        <ul class="o-list-bare">
+          <li><a href="#0">Item 1</a></li>
+          <li><a href="#1">Item 2</a></li>
+          <li><a href="#0">Item 3</a></li>
+          <li><a href="#0">Item 4</a></li>
+          <li><a href="#0">Item 5</a></li>
+        </ul>
+      </div>
+      <div class="o-layout__item  u-6/12@md">
+        <h4>Footer Title 2</h4>
+        <ul class="o-list-bare">
+          <li><a href="#0">Item 1</a></li>
+          <li><a href="#1">Item 2</a></li>
+          <li><a href="#0">Item 3</a></li>
+          <li><a href="#0">Item 4</a></li>
+          <li><a href="#0">Item 5</a></li>
+        </ul>
+      </div>
+      <hr class="c-divider">
+      <p><small>Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
+        vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+        quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+        eleifend leo.</small></p>
+    </div>
+  </div>
+</footer></xmp>
+
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <footer class="c-page-footer">
+                    <div class="o-wrapper">
+                      <div class="o-layout">
+                        <div class="o-layout__item  u-6/12@md">
+                          <h4>Footer Title</h4>
+                          <ul class="o-list-bare">
+                            <li><a href="#0">Item 1</a></li>
+                            <li><a href="#1">Item 2</a></li>
+                            <li><a href="#0">Item 3</a></li>
+                            <li><a href="#0">Item 4</a></li>
+                            <li><a href="#0">Item 5</a></li>
+                          </ul>
+                        </div>
+                        <div class="o-layout__item  u-6/12@md">
+                          <h4>Footer Title 2</h4>
+                          <ul class="o-list-bare">
+                            <li><a href="#0">Item 1</a></li>
+                            <li><a href="#1">Item 2</a></li>
+                            <li><a href="#0">Item 3</a></li>
+                            <li><a href="#0">Item 4</a></li>
+                            <li><a href="#0">Item 5</a></li>
+                          </ul>
+                        </div>
+                        <hr class="c-divider">
+                        <p><small>Pellentesque habitant morbi tristique senectus et netus et
+                          malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
+                          vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
+                          quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+                          eleifend leo.</small></p>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+            <p>Inside the footer tag, include a <code>.o-wrapper</code> class on a division to ensure proper spacing. Then, within this wrapper,
+            include any revelant tags to include the required information. The above example has two lists, and some smallprint</p>
+            <p>Place the footer tag underneath all HTML elements on the page to ensure it appears at the foot.</p>
           </div>
 
           <a class = "anchor" name = "progressBar"></a>
@@ -1246,20 +1401,103 @@ as a form of navigation throughout the guide.-->
   </li>
 
 </ol></xmp>
+<!--End Indentation Section -->
 
                 </div>
                 <div style = "text-align:left"; class = "o-layout__item u-6/12@md">
                   <p>Result:</p>
+                  <ol class="c-pagination">
+                    <li class="c-pagination__item  c-pagination__prev">
+                      <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--prev-blue">Prev Page</span></a>
+                    </li>
+                    <li class="c-pagination__item">
+                      <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 1</a>
+                    </li>
+                    <li class="c-pagination__item">
+                      <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 2</a>
+                    </li>
+                    <li class="c-pagination__item">
+                      <a href="#0" class="c-pagination__link"><span class="u-hide-visually">Page</span> 3</a>
+                    </li>
+                    <li class="c-pagination__item  c-pagination__next">
+                      <a href="#0" class="c-pagination__link"><span class="c-sprite  c-sprite--next-blue">Next Page</span></a>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </div>
 
+            <p>The first and last list items are arrow icons which are used to navigate directly to the previous and next pages within the page flow. Change the 'href' of the 'a' tag
+            in order to change the targetted page. Similarly, change the number of <code>.c-pagination__item</code> styled list elements to reflect the structure of your site.</p>
+            <p>Note: The span tag with the hidden text is included as a fallback. Learn about display options <a href="#display">here</a>.</p>
 
           </div>
 
           <a class = "anchor" name = "details"></a>
         <h4 class = "u-margin-left-small">Details</h3>
           <div class = "u-margin-left-small">
+            <p>Details can be used to reveal content on page, in the form of a collapsable section. Use the <code>details</code> tag to access a styled section:</p>
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><details>
+  <summary>Click To Reveal Text!</summary>
+  <div>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+      Mauris placerat eleifend leo.</p>
+  </div>
+</details></xmp>
+<!--End Indentation Section -->
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <details>
+                    <summary>Click To Reveal Text!</summary>
+                    <div>
+                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+                        Mauris placerat eleifend leo.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </div>
+          <p>Replace the <code>details</code> tag with the <code>details open</code> tag, and the text will be open by default:</p>
+            <div class = "u-margin-left-small border o-wrapper">
+              <div class = "o-layout o-layout--narrow">
+                <div class = "o-layout__item u-6/12@md">
+
+<!-- Indentation incorrect intentionally. Required to show correct code block-->
+<xmp><details open>
+  <summary>Already Open!</summary>
+  <div>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+      Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+      Mauris placerat eleifend leo.</p>
+  </div>
+</details></xmp>
+<!--End Indentation Section -->
+                </div>
+                <div class = "o-layout__item u-6/12@md">
+                  <p>Result:</p>
+                  <details open>
+                    <summary>Already Open!</summary>
+                    <div>
+                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                        Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.
+                        Mauris placerat eleifend leo.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </div>
           </div>
 
           <a class = "anchor" name = "sprites"></a>
@@ -1275,7 +1513,7 @@ as a form of navigation throughout the guide.-->
 
     </div>
 
-  <footer class="c-page-footer">
+  <footer style = "position:relative;top:175px;" class="c-page-footer u-z-index-10">
 
     <div class="o-wrapper">
 
@@ -1283,7 +1521,7 @@ as a form of navigation throughout the guide.-->
 
         <div class="o-layout__item  u-4/12@md">
 
-          <h4>Some Info Below</h4>
+          <h4>Nightingale Styleguide</h4>
 
           <ul class="o-list-bare">
             <li><a href="#0"></a></li>
@@ -1296,7 +1534,7 @@ as a form of navigation throughout the guide.-->
 
       <hr class="c-divider" />
 
-      <p><small>This is a very important piece of text. You should read it and take notes...</small></p>
+      <p><small>NHS Leadership Academy's 'Nightingale' Front-End Framework Design Documentation. Use these documents to style websites correctly. To contribuite to this document, please <a href = "https://github.com/NHSLeadership/styleguide">visit the repository.</a></small></p>
 
     </div>
 

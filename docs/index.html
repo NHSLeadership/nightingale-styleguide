@@ -998,6 +998,16 @@ as a form of navigation throughout the guide.-->
             <strong>TITLE:</strong>
             <p><code>.c-page-header__title</code>: Attach the NHS standard title for your organisation to this element. It will be positioned automatically. Alternatively, replace the
             <code>img</code> tag with a <code>strong</code> tag, and type title text.</p>
+
+            <p>You can invert the color of the header by appending the <code>.c-page-header--invert</code> class:</p>
+            <div class="u-margin-left-small o-wrapper border">
+              <header class = "c-page-header c-page-header--invert">
+                <div class = "o-wrapper">
+                  <img class = "c-page-header__logo" src="./assets/img/logoMain.png" alt="" width="74" height="30"/>
+                  <img style = "filter:invert(100%);" class = "c-page-header__title" src="./assets/img/logo-sub.png" alt="" width="241" height="25"/>
+                </div>
+              </header>
+            </div>
           </div>
 
           <a class = "anchor" name = "navPrimary"></a>
